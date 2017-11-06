@@ -70,14 +70,14 @@ func main() {
 			panic(err)
 		}
 
-		fmt.Println(token)
+		fmt.Print(token)
 	} else {
 		token, err := refreshToken(options, loginInfo, *existingToken)
 		if err != nil {
 			panic(err)
 		}
 
-		fmt.Println(token)
+		fmt.Print(token)
 	}
 }
 
