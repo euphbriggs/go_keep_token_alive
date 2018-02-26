@@ -82,7 +82,7 @@ func main() {
 }
 
 func refreshToken(options KeepAliveOptions, loginInfo LoginInfo, token string) (string, error) {
-	url := fmt.Sprintf("http://%s:%s/%s", options.APIHost, options.Port, options.PingPath)
+	url := fmt.Sprintf("https://%s:%s/%s", options.APIHost, options.Port, options.PingPath)
 
 	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
@@ -119,7 +119,7 @@ func refreshToken(options KeepAliveOptions, loginInfo LoginInfo, token string) (
 }
 
 func login(options KeepAliveOptions, loginInfo LoginInfo) (string, error) {
-	url := fmt.Sprintf("http://%s:%s/%s", options.APIHost, options.Port, options.LoginPath)
+	url := fmt.Sprintf("https://%s:%s/%s", options.APIHost, options.Port, options.LoginPath)
 
 	loginBytes, err := json.Marshal(loginInfo)
 	if err != nil {
